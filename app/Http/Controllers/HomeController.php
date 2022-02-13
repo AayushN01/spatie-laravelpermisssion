@@ -26,11 +26,14 @@ class HomeController extends Controller
     public function index()
     {   
         // Role::create(['name'=>'writer']);
-        // Permission::create(['name'=>'edit post']);
-        $role = Role::findById(1);
-        $permission = Permission::findById(2);
+        // Permission::create(['name'=>'delete post']);
+        // $role = Role::findById(1);
+        // $permission = Permission::findById(3);
         // $role->givePermissionTo($permission);
-        $permission->removeRole($role);
+        // $permission->removeRole($role);
+        // auth()->user()->givePermissionTo('delete post');
+        // auth()->user()->givePermissionTo('write post');
+        // auth()->user()->assignRole('writer');
         return view('home');
     }
 }
