@@ -21,8 +21,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/post',[App\Http\Controllers\PostController::class,'index'])->name('index');
-Route::get('/post/create',[App\Http\Controllers\PostController::class,'create'])->name('post.create');
+Route::get('/post/create',[App\Http\Controllers\PostController::class,'create'])->name('post.create')->middleware('role:author|admin');
 Route::post('/post',[App\Http\Controllers\PostController::class,'store'])->name('post.store');
-Route::get('/post/{id}/edit',[App\Http\Controllers\PostController::class,'edit'])->name('post.edit');
+Route::get('/post/{id}/edit',[App\Http\Controllers\PostController::class,'edit'])->name('post.edit')->middleware('permission:edit post');
 Route::put('/post/{id}',[App\Http\Controllers\PostController::class,'update'])->name('post.update');
 Route::get('{id}',[App\Http\Controllers\PostController::class,'destroy'])->name('post.delete');
