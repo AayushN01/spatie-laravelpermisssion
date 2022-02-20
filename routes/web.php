@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -26,3 +26,4 @@ Route::post('/post',[App\Http\Controllers\PostController::class,'store'])->name(
 Route::get('/post/{id}/edit',[App\Http\Controllers\PostController::class,'edit'])->name('post.edit')->middleware('permission:edit post');
 Route::put('/post/{id}',[App\Http\Controllers\PostController::class,'update'])->name('post.update');
 Route::get('{id}',[App\Http\Controllers\PostController::class,'destroy'])->name('post.delete');
+
