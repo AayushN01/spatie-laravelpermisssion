@@ -27,3 +27,11 @@ Route::get('/post/{id}/edit',[App\Http\Controllers\PostController::class,'edit']
 Route::put('/post/{id}',[App\Http\Controllers\PostController::class,'update'])->name('post.update');
 Route::get('{id}',[App\Http\Controllers\PostController::class,'destroy'])->name('post.delete');
 
+Route::group(['as'=>'permission.', 'prefix'=>'permission'], function(){
+    Route::get('permisssion', 'PermissionController@index')->name('index');
+    Route::get('create', 'PermissionController@create')->name('create');
+    Route::post('', 'PermissionController@store')->name('store');
+    Route::get('permission/{id}/edit','PermissionController@edit')->name('edit');
+    Route::put('permission/{id}','PermissionController@update')->name('update');
+    Route::get('{id}','PermissionController@destroy')->name('delete');
+});
