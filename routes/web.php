@@ -35,3 +35,13 @@ Route::group(['as'=>'permission.', 'prefix'=>'permission'], function(){
     Route::put('permission/{id}','PermissionController@update')->name('update');
     Route::get('{id}','PermissionController@destroy')->name('delete');
 });
+
+Route::group(['as'=>'role.', 'prefix'=>'role'], function(){
+    Route::get('role', 'RoleController@index')->name('index');
+    Route::get('create', 'RoleController@create')->name('create');
+    Route::post('', 'RoleController@store')->name('store');
+    Route::get('role/{id}/edit', 'RoleController@edit')->name('edit');
+    Route::put('role/{id}', 'RoleController@update')->name('update');
+    Route::get('{id}', 'RoleController@destroy')->name('delete');
+
+});

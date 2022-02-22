@@ -33,13 +33,14 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    @auth
                     <ul class="navbar-nav">
                         <li class="nav-links"><a href="{{route('permission.index')}}" class="text-uppercase">Permission</a></li>
-                        <li class="nav-links"><a href="" class="text-uppercase">Roles</a></li>
+                        <li class="nav-links"><a href="{{route('role.index')}}" class="text-uppercase">Roles</a></li>
                         <li class="nav-links"><a href="" class="text-uppercase">Users</a></li>
                         <li class="nav-links"><a href="" class="text-uppercase">Posts</a></li>
                     </ul>
-
+                    @endauth
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
