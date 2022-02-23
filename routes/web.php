@@ -45,3 +45,12 @@ Route::group(['as'=>'role.', 'prefix'=>'role'], function(){
     Route::get('{id}', 'RoleController@destroy')->name('delete');
 
 });
+
+Route::group(['as'=>'user.', 'prefix'=>'user'], function(){
+    Route::get('index', 'UserController@index')->name('index');
+    Route::get('create', 'UserController@create')->name('create');
+    Route::post('', 'UserController@store')->name('store');
+    Route::get('user/{id}/edit', 'UserController@edit')->name('edit');
+    Route::put('user/{id}', 'UserController@update')->name('update');
+    Route::get('{id}', 'UserController@destroy')->name('destroy');
+});
