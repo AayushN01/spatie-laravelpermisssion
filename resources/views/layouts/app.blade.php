@@ -35,10 +35,12 @@
                     <!-- Left Side Of Navbar -->
                     @auth
                     <ul class="navbar-nav">
+                        @role('SuperAdmin|Admin')
                         <li class="nav-links"><a href="{{route('permission.index')}}" class="text-uppercase">Permission</a></li>
                         <li class="nav-links"><a href="{{route('role.index')}}" class="text-uppercase">Roles</a></li>
+                        @endrole
                         <li class="nav-links"><a href="{{route('user.index')}}" class="text-uppercase">Users</a></li>
-                        <li class="nav-links"><a href="" class="text-uppercase">Posts</a></li>
+                        <li class="nav-links"><a href="{{route('index')}}" class="text-uppercase">Posts</a></li>
                     </ul>
                     @endauth
                     <!-- Right Side Of Navbar -->

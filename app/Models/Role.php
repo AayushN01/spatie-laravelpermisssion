@@ -13,6 +13,7 @@ class Role extends Model
     use HasFactory, HasRoles;
     
     protected $fillable = ['name', 'guard_name'];
+    protected $guard = ['web'];
 
     public function permissions()
     {

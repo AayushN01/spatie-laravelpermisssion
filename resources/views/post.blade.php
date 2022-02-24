@@ -2,15 +2,15 @@
 @section('content')
 <div class="container">
     <div class="card">
-        <div class="card-head">
-            @role('author|admin')
+        @role('SuperAdmin|Admin|Writer')
+        <div class="card-head">         
             <div class="row my-3">
                 <div class="col-lg-12">
-                    <a href="#" class="btn btn-primary" style="float: right;">Add</a>
+                    <a href="{{route('post.create')}}" class="btn btn-primary" style="float: right;">Add</a>
                 </div>
             </div>
-            @endrole
         </div>
+        @endrole
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered">
@@ -28,7 +28,7 @@
                                 <td>{{$post->title}}</td>
                                 <td>
                                     @can('edit post')<a href="{{route('post.edit', $post->id)}}" class="ml-5 btn btn-warning">Edit</a> @endcan
-                                    @role('admin')<a href="{{route('post.delete',$post->id)}}" class="btn btn-danger">Delete</a>@endrole
+                                    @can('delete post')<a href="{{route('post.delete',$post->id)}}" class="btn btn-danger">Delete</a>@endcan
                                 </td>
                             </tr>
                             @endforeach
